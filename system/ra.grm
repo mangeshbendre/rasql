@@ -1,0 +1,172 @@
+! -----------------------------------------------------------------------------------
+!
+! RA (Relational Algebra)
+!
+
+! -----------------------------------------------------------------------------------
+
+"Name"         = 'RA'
+"Version"      = '0.1'
+"About"        = 'This is the Relational Algebra Gramer'
+"Author"       = 'Mangesh Bendre'
+
+"Start Symbol" = <Script>
+
+! =============================================================================
+! Comments
+! =============================================================================
+
+Comment Start = '/*'
+Comment End   = '*/'
+Comment Line  = '--'
+
+! =============================================================================
+! Terminals
+! =============================================================================
+
+{String Ch 1}      = {Printable} - ["]
+{String Ch 2}      = {Printable} - ['']
+{Id Ch Standard}   = {Alphanumeric} + [_]
+{Id Ch Extended}   = {Printable} - ['['] - [']']
+
+StringLiteral   = '"'{String Ch 1}*'"' | ''{String Ch 2}*''
+IntegerLiteral  = {Digit}+
+RealLiteral     = {Digit}+'.'{Digit}+
+
+!----- Identifiers in SQL are very complex. 
+
+Id             = ({Letter}{Id Ch Standard}* | '['{Id Ch Extended}+']')  (({Letter}{Id Ch Standard}* | '['{Id Ch Extended}+']'))?
+
+! =============================================================================
+! Rules
+! =============================================================================
+
+<Script>	::= <Relation>
+		  | <Relation> ';'
+		  | <Relation> ';' <Script>  
+
+<Relation>    ::= <Projection>
+                | <Selection>
+                | <Union>
+                | <Difference>
+                | <Intersection>
+                | <Natural_Join>
+                | <Theta_Join>
+                | <Left_Join>
+                | <Right_Join>
+                | <Outer_Join>
+                | <Theta_Left_Join>
+                | <Theta_Right_Join>
+                | <Theta_Outer_Join>
+                | <Product>
+                | <Rename>
+                | <Rename_Attr>
+                | '('<Relation>')'
+                | Id
+                | <CreateTable>
+
+<Projection>     ::= PROJECTION'{'<Column List>'}''('<Relation>')'
+
+<Selection>      ::= SELECTION'{'<Expression>'}''('<Relation>')'
+
+<Union>          ::= <Relation> UNION <Relation>
+<Difference>     ::= <Relation> MINUS <Relation>
+<Intersection>   ::= <Relation> INTERSECTION <Relation>
+<Natural_Join>   ::= <Relation> JOIN <Relation>
+<Theta_Join>     ::= <Relation> JOIN'{'<Expression>'}' <Relation>
+
+<Left_Join>      ::= <Relation> LEFT_JOIN <Relation>
+<Right_Join>     ::= <Relation> RIGHT_JOIN <Relation>
+<Outer_Join>     ::= <Relation> OUTER_JOIN <Relation>
+
+<Theta_Left_Join>      ::= <Relation> LEFT_JOIN'{'<Expression>'}' <Relation>
+<Theta_Right_Join>     ::= <Relation> RIGHT_JOIN'{'<Expression>'}' <Relation>
+<Theta_Outer_Join>     ::= <Relation> OUTER_JOIN'{'<Expression>'}' <Relation>
+
+
+<Product>        ::= <Relation> PRODUCT <Relation>
+<Rename>         ::= RENAME'{'Id'}''('<Relation>')'
+<Rename_Attr>    ::= RENAME'{'Id'('<Column List>')''}''('<Relation>')'
+<CreateTable>    ::= Id '='  <Relation>
+
+
+
+
+! =============================================================================
+! Columns
+! =============================================================================
+
+<Column List>   ::= <Column Item> ',' <Column List>
+                  | <Column Item>
+
+<Column Item>   ::= Id
+                  | Id'.'Id
+
+
+<Column Item Alias>   ::= <Column Source>
+                        | <Column Source> Id      !ALIAS   
+                  
+<Column Source> ::= Id
+
+
+! ============================================================================= 
+! Expressions
+! =============================================================================
+
+<Expression>  ::= <And Exp> OR <Expression>
+                | <And Exp>
+
+<And Exp>     ::= <Not Exp> AND <And Exp>
+                | <Not Exp>
+
+<Not Exp>     ::= NOT <Pred Exp>
+                | <Pred Exp>
+
+<Pred Exp>    ::= <Add Exp> BETWEEN <Add Exp> AND <Add Exp>
+                | <Add Exp> NOT BETWEEN <Add Exp> AND <Add Exp>
+                | <Value> IS NOT NULL
+                | <Value> IS NULL
+                | <Add Exp> LIKE StringLiteral
+                | <Add Exp> IN   <Tuple>
+                | <Add Exp> '='  <Add Exp>
+                | <Add Exp> '<>' <Add Exp>
+                | <Add Exp> '!=' <Add Exp>
+                | <Add Exp> '>'  <Add Exp>
+                | <Add Exp> '>=' <Add Exp>
+                | <Add Exp> '<'  <Add Exp>
+                | <Add Exp> '<=' <Add Exp>
+                | <Add Exp>
+
+<Add Exp>     ::= <Add Exp> '+' <Mult Exp>
+                | <Add Exp> '-' <Mult Exp>
+                | <Mult Exp>
+
+<Mult Exp>    ::= <Mult Exp> '*' <Negate Exp> 
+                | <Mult Exp> '/' <Negate Exp>
+                | <Negate Exp>
+
+<Negate Exp>  ::= '-' <Value>
+                | <Value>
+        
+<Value>       ::= <Tuple>
+                | <Column Item>
+                | IntegerLiteral
+                | RealLiteral
+                | StringLiteral
+                | NULL
+
+!<Tuple>       ::= '(' <Select Stm> ')'
+!                | '(' <Expr List> ')'
+
+<Tuple>       ::= '(' <Expr List> ')'
+
+
+
+<Expr List>  ::= <Expression> ',' <Expr List>
+               | <Expression>
+
+<Id List>     ::= <Id Member> ',' <Id List> 
+                | <Id Member>
+
+<Id Member>   ::= Id
+                | Id Id

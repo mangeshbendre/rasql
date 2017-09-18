@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/save_edit.gif</file>
+        <file>images/new.gif</file>
+        <file>images/paste.gif</file>
+        <file>images/copy.gif</file>
+        <file>images/run.gif</file>
+        <file>images/nav_stop.gif</file>
+        <file>images/cut.gif</file>
+        <file>images/settings.gif</file>
+        <file>images/open.gif</file>
+        <file>images/redo_edit.gif</file>
+        <file>images/undo_edit.gif</file>
+        <file>images/saveas_edit.gif</file>
+        <file>images/connect.gif</file>
+        <file>images/SQL.gif</file>
+        <file>images/Rat.jpg</file>
+        <file>images/eraser.gif</file>
+    </qresource>
+</RCC>
