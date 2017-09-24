@@ -48,12 +48,10 @@
 +===================================-
    
  Using sources:
- 1. Copy the 2Idiots-rat.tar file to the folder where you want to compile.
- 2. Extract the file.
- 3. Go to 2Idiots-rat/application
- 4. Run qmake command (you will need QT installed in your machine for this)
- 5. Run make
- 6. Run the generated rat binary file to start the application.
+ 1. Go to application folder.
+ 2. Run qmake command (you will need QT installed in your machine for this).
+ 3. Run make.
+ 4. Run the generated rat binary file to start the application.
 
 
 
