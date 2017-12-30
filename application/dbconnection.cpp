@@ -15,7 +15,7 @@ DBConnection::DBConnection()
 }
 
 bool DBConnection::connected = false;
-QString DBConnection::db_error = false;
+QString DBConnection::db_error;
 
 QSqlDatabase DBConnection::db;
 

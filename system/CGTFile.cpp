@@ -56,10 +56,6 @@
 
     cgtStream.open (filename, ifstream::in | ifstream::binary);
 
-    if (((void*) cgtStream) == NULL) {
-        return false;
-    }
-
     bool result = load (&cgtStream);
     cgtStream.close();
     return result;

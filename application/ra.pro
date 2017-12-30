@@ -1,7 +1,10 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-03-05T20:15:02
 # -------------------------------------------------
-QT += sql
+QT += core gui sql
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 TARGET = rat
 TEMPLATE = app
 SOURCES += main.cpp \

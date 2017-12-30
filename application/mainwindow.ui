@@ -48,7 +48,16 @@
          <property name="sizeConstraint">
           <enum>QLayout::SetMaximumSize</enum>
          </property>
-         <property name="margin">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
@@ -100,8 +109,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -128,8 +139,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -156,8 +169,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -184,8 +199,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -212,10 +229,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -242,8 +259,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -270,8 +289,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -298,8 +319,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>14</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -326,8 +349,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>16</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -354,8 +379,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>15</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -382,10 +409,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>16</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -412,8 +439,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>15</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -440,8 +469,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>15</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -468,8 +499,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>15</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -496,8 +529,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -524,8 +559,10 @@
               </property>
               <property name="font">
                <font>
-                <family>Bitstream Charter</family>
-                <pointsize>12</pointsize>
+                <family>Apple Symbols</family>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="toolTip">
@@ -569,7 +606,16 @@
            <string>Editor</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
             <number>0</number>
            </property>
            <item row="0" column="0">
@@ -588,7 +634,16 @@
            <string>Relations</string>
           </property>
           <layout class="QGridLayout" name="gridLayout">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
             <number>0</number>
            </property>
            <item row="0" column="0">
@@ -605,9 +660,6 @@
              <property name="columnCount">
               <number>1</number>
              </property>
-             <attribute name="headerVisible">
-              <bool>false</bool>
-             </attribute>
              <attribute name="headerVisible">
               <bool>false</bool>
              </attribute>
@@ -636,7 +688,16 @@
            <string>Data Grid</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_2">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>2</number>
+           </property>
+           <property name="rightMargin">
+            <number>2</number>
+           </property>
+           <property name="bottomMargin">
             <number>2</number>
            </property>
            <item row="0" column="0">
@@ -649,7 +710,16 @@
            <string>Query</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_3">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>2</number>
+           </property>
+           <property name="rightMargin">
+            <number>2</number>
+           </property>
+           <property name="bottomMargin">
             <number>2</number>
            </property>
            <item row="0" column="0">
@@ -666,7 +736,16 @@
            <string>Trace</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_4">
-           <property name="margin">
+           <property name="leftMargin">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>2</number>
+           </property>
+           <property name="rightMargin">
+            <number>2</number>
+           </property>
+           <property name="bottomMargin">
             <number>2</number>
            </property>
            <item row="0" column="0">
@@ -691,7 +770,7 @@
      <x>0</x>
      <y>0</y>
      <width>753</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
