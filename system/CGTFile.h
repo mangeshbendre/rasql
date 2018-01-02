@@ -27,6 +27,7 @@
  #include "LALR.h"
  #include "ErrorReporter.h"
  #include "SymbolBase.h"
+#include <QDataStream>
  
 namespace Astudillo
 {
@@ -42,7 +43,7 @@ namespace Astudillo
 	   Returns true if succesfull, false if error.
 	   */
 	   bool load (char *filename);
-	   bool load (ifstream *myStream);
+       bool load (QDataStream *myStream);
 	
 	   GrammarInfo *getInfo ();	
 	
@@ -62,7 +63,7 @@ namespace Astudillo
 	
 	   char* errorString;
 	
-	   ifstream *theStream;
+       QDataStream *theStream;
 	
 	   // Character Table
 	   UBYTE2 nbrCharacterSets;

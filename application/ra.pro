@@ -42,3 +42,5 @@ FORMS += mainwindow.ui \
     settings.ui \
     connect.ui
 RESOURCES += ra.qrc
+
+DISTFILES +=

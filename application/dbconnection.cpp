@@ -59,10 +59,10 @@ bool DBConnection::disconnect()
 {
 
     QSqlDatabase db = QSqlDatabase::database();
-    model->clear();
-    delete model;
-    query->finish();
-    delete query;
+    //model->clear();
+    //delete model;
+    //query->finish();
+    //delete query;
     db.close();
     QSqlDatabase::removeDatabase(db.connectionName());
     return true;

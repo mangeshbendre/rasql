@@ -19,7 +19,14 @@
  *                                                                         *
  ***************************************************************************/
 
- #include "CGTFile.h"
+//inline void initMyResource() { Q_INIT_RESOURCE(ra); }
+
+#include "CGTFile.h"
+#include <QDir>
+#include <QFile>
+#include <QDataStream>
+
+
 
  using namespace Astudillo;
 
@@ -51,17 +58,22 @@
 	 delete theLALR;
  }
 
- bool CGTFile::load (char *filename) {
+ bool CGTFile:: load (char *filename) {
     ifstream cgtStream;
 
-    cgtStream.open (filename, ifstream::in | ifstream::binary);
+    //initMyResource();
 
-    bool result = load (&cgtStream);
+    QFile file(":/ra.cgt");
+    file.open(QIODevice::ReadOnly);
+    QDataStream in(&file);
+    //cgtStream.open (filename, ifstream::in | ifstream::binary);
+
+    bool result = load (&in);
     cgtStream.close();
     return result;
  }
 
- bool CGTFile::load (ifstream *myStream) 
+ bool CGTFile::load (QDataStream *myStream)
  {
    int i;	
 
@@ -77,18 +89,18 @@
    UBYTE2 nbrEntries;
    UBYTE2 index;
 
-   while (!theStream->eof()) {
+   while (!theStream->atEnd()) {
      // Read record type & number of entries
-     theStream->read ((char*)&recordType, 1);
-     if (theStream->fail()) {
-        if (theStream->eof()) {
+     theStream->readRawData ((char*)&recordType, 1);
+     if (theStream->status()!=QDataStream::Ok) {
+        if (theStream->atEnd()) {
 			break;
         } else {
 			return false;
         }
      }
 
-    theStream->read ((char*) &nbrEntries, 2);
+    theStream->readRawData ((char*) &nbrEntries, 2);
     //Convert to little endian if needed.
     nbrEntries = EndianConversion(nbrEntries);
 
@@ -294,8 +306,8 @@ bool CGTFile::readEntry (EntryStruct *entry)
 	char tmpChar;
 	char dataType;
 
-	theStream->get (dataType);
-	if (theStream->fail()) 
+    theStream->readRawData(&dataType,1);
+    if (theStream->status()!=QDataStream::Ok)
 	{
 		errorString = "Error reading entry\n";
 		return false;
@@ -306,17 +318,17 @@ bool CGTFile::readEntry (EntryStruct *entry)
 		{
 		case 'E': break;
 		case 'B':
-			theStream->get (tmpChar);
+            theStream->readRawData(&tmpChar,1);
 			if (tmpChar)
 				entry->vBool = true;
 			else
 				entry->vBool = false;
 			break;
 		case 'b':
-			theStream->read ((char*) &entry->vByte, 1);
+            theStream->readRawData ((char*) &entry->vByte, 1);
 			break;
 		case 'I':
-			theStream->read ((char*) &entry->vInteger, 2);
+            theStream->readRawData ((char*) &entry->vInteger, 2);
 			entry->vInteger = EndianConversion(entry->vInteger); 
 			break;
 		case 'S':
@@ -335,9 +347,9 @@ bool CGTFile::readEntry (EntryStruct *entry)
 
    while (true) 
    {
-       theStream->read((char*)&readChar, 2);
+       theStream->readRawData((char*)&readChar, 2);
 
-	   if (readChar == 0 || theStream->eof())
+       if (readChar == 0 || theStream->atEnd())
 		   break;
 
 	   sTemp.append(1, EndianConversion(readChar));

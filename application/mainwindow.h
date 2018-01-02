@@ -11,9 +11,9 @@
 
 #define APP_NAME "RAT"
 #define COMPANY_NAME "2 Idiots"
-#define FONT_FAMILY "Sans Serif"
-#define FONT_SIZE 15
-#define APP_FONT "<span style=\" font-family:'Sans Serif'; font-size:15pt;\">"
+#define FONT_FAMILY "Apple Symbols"
+#define FONT_SIZE 20
+#define APP_FONT "<span style=\" font-family:'Apple Symbols'; font-size:15pt;\">"
 
 namespace Ui {
     class MainWindow;
