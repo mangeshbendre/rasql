@@ -44,3 +44,4 @@ FORMS += mainwindow.ui \
 RESOURCES += ra.qrc
 
 DISTFILES +=
+ICON = rat.icns
