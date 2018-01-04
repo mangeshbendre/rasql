@@ -13,7 +13,7 @@
 #define COMPANY_NAME "2 Idiots"
 #define FONT_FAMILY "Apple Symbols"
 #define FONT_SIZE 20
-#define APP_FONT "<span style=\" font-family:'Apple Symbols'; font-size:15pt;\">"
+#define APP_FONT "<span style=\" font-family:'Apple Symbols'; font-size:20pt;\">"
 
 namespace Ui {
     class MainWindow;
@@ -69,6 +69,12 @@ private slots:
     void documentWasModified();
     void displaySettings();
     void displayConnect();
+
+    void on_actionZoom_In_triggered();
+
+    void on_actionZoom_Out_triggered();
+
+    void on_actionActual_Size_triggered();
 
 private:
     void createActions();

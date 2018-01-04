@@ -465,7 +465,8 @@ void MainWindow::populateRelations()
 
 void MainWindow::addTextEditSQL(const QString &oper, int typeOper,  QString suffix = "condition"){
 
-    QString htmlFont = APP_FONT;
+    //QString htmlFont = APP_FONT;
+    QString htmlFont = "";
     QString htmlStringUn, htmlStringUn1;
     QString htmlStringBin, htmlStringBin1, htmlStringBin2, htmlStringBinSuf;
 
@@ -632,3 +633,23 @@ void MainWindow::on_action_Redo_triggered()
     ui->textEditRAEditor->redo();
 }
 
+
+void MainWindow::on_actionZoom_In_triggered()
+{
+    ui->textEditRAEditor->zoomIn();
+
+}
+
+void MainWindow::on_actionZoom_Out_triggered()
+{
+    ui->textEditRAEditor->zoomOut();
+    QMessageBox msgBox;
+    msgBox.setText( QApplication::focusWidget()->metaObject()->className());
+    msgBox.exec();
+
+}
+
+void MainWindow::on_actionActual_Size_triggered()
+{
+
+}
