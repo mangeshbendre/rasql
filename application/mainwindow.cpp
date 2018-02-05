@@ -22,6 +22,28 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     settings=new Settings(this);
     connectWindow=new Connect(this);
+    int id = QFontDatabase::addApplicationFont(":/Apple Symbols Regular.ttf");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont symbols(family);
+
+    symbols.setPointSize(12);
+    ui->pushButton_difference->setFont(symbols);
+    ui->pushButton_oper_assign->setFont(symbols);
+    ui->pushButton_oper_cartestian->setFont(symbols);
+    ui->pushButton_oper_intersection->setFont(symbols);
+    ui->pushButton_oper_leftouterjoin->setFont(symbols);
+    ui->pushButton_oper_natural->setFont(symbols);
+    ui->pushButton_oper_outerjoin->setFont(symbols);
+    ui->pushButton_oper_project->setFont(symbols);
+    ui->pushButton_oper_rename->setFont(symbols);
+    ui->pushButton_oper_rightouterjoin->setFont(symbols);
+    ui->pushButton_oper_select->setFont(symbols);
+    ui->pushButton_oper_theta->setFont(symbols);
+    ui->pushButton_oper_thetaleftouterjoin->setFont(symbols);
+    ui->pushButton_oper_thetaouterjoin->setFont(symbols);
+    ui->pushButton_oper_thetarightouterjoin->setFont(symbols);
+    ui->pushButton_oper_union->setFont(symbols);
+
 
     createActions();
 
