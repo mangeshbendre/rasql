@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <QStandardItem>
 #include <QSettings>
+#include <QStandardPaths>
 
 Settings::Settings(QWidget *parent) :
         QDialog(parent),
@@ -80,6 +81,7 @@ Settings::~Settings()
 void Settings::getFileName()
 {
     QString fileName = QFileDialog::getSaveFileName(this,tr("Select DB file"),
+                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+
                                                     ui->lineEdit_DBName->text(),
                                                     tr("SQLite DB (*.db);;All Files(*.*)"),
                                                     0,

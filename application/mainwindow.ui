@@ -1136,11 +1136,6 @@
     <string>Ctrl+-</string>
    </property>
   </action>
-  <action name="actionActual_Size">
-   <property name="text">
-    <string>Actual Size</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -14,6 +14,7 @@
 #include <QSqlError>
 #include <QSqlRecord>
 #include <QDebug>
+#include <QStandardPaths>
 
 MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
@@ -39,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    ui->tableView_Results->setModel(NULL);
+    DBConnection::model=NULL;
     delete ui;
 }
 
@@ -168,7 +171,9 @@ void MainWindow::loadFile(const QString &fileName)
 void MainWindow::open()
 {
     if (maybeSave()) {
-        QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Rat files (*.rat)"));
+        QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                        tr("Rat files (*.rat)"));
         if (!fileName.isEmpty())
             loadFile(fileName);
     }
@@ -379,11 +384,14 @@ void MainWindow::on_action_Run_triggered()
     for (constIterator = sqlQueryList.constBegin(); constIterator != sqlQueryList.constEnd();
     ++constIterator)
     {
-     ok = DBConnection::query->exec(*constIterator);
-     if(ok)
-         continue;
-     else
-         break;
+        if (((QString) *constIterator).trimmed().size()>0)
+        {
+         ok = DBConnection::query->exec(*constIterator);
+         if(ok)
+             continue;
+         else
+             break;
+        }
     }
 
 
@@ -465,25 +473,22 @@ void MainWindow::populateRelations()
 
 void MainWindow::addTextEditSQL(const QString &oper, int typeOper,  QString suffix = "condition"){
 
-    //QString htmlFont = APP_FONT;
-    QString htmlFont = "";
-    QString htmlStringUn, htmlStringUn1;
+    QString htmlStringUn1;
     QString htmlStringBin, htmlStringBin1, htmlStringBin2, htmlStringBinSuf;
 
     QTextCursor cursor = ui->textEditRAEditor->textCursor();
     int countOfSelected=1, selectionStart=1;
 
-    htmlStringUn = "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">"  + htmlFont;
     htmlStringUn1 = "<sub>  " + suffix + " </sub>(Relation)</span></p>";
 
-    htmlStringBin = "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" + htmlFont + "Relation1 ";
+    htmlStringBin =  "Relation1 ";
     htmlStringBin1 ="</span>";
     htmlStringBinSuf = "<sub> " + suffix + " </sub>";
     htmlStringBin2 =  " Relation2 </span></p>";
 
     switch (typeOper){
     case 1:
-        ui->textEditRAEditor->insertHtml(htmlStringUn + oper + htmlStringUn1);
+        ui->textEditRAEditor->insertHtml(oper + htmlStringUn1);
         if(suffix == "newRelation (columns)")
             selectionStart = 7;
         else
@@ -643,13 +648,11 @@ void MainWindow::on_actionZoom_In_triggered()
 void MainWindow::on_actionZoom_Out_triggered()
 {
     ui->textEditRAEditor->zoomOut();
-    QMessageBox msgBox;
-    msgBox.setText( QApplication::focusWidget()->metaObject()->className());
-    msgBox.exec();
-
 }
 
-void MainWindow::on_actionActual_Size_triggered()
-{
 
+void MainWindow::on_MainWindow_destroyed()
+{
+    ui->tableView_Results->setModel(NULL);
+    DBConnection::model=NULL;
 }

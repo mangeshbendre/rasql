@@ -74,7 +74,7 @@ private slots:
 
     void on_actionZoom_Out_triggered();
 
-    void on_actionActual_Size_triggered();
+    void on_MainWindow_destroyed();
 
 private:
     void createActions();
