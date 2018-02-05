@@ -643,10 +643,6 @@ void MainWindow::on_actionZoom_In_triggered()
 void MainWindow::on_actionZoom_Out_triggered()
 {
     ui->textEditRAEditor->zoomOut();
-    QMessageBox msgBox;
-    msgBox.setText( QApplication::focusWidget()->metaObject()->className());
-    msgBox.exec();
-
 }
 
 void MainWindow::on_actionActual_Size_triggered()
