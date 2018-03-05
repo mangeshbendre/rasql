@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
+<!-- Written by QtCreator 4.5.0, 2018-03-05T10:32:26. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{df0167f4-2052-4d76-87c1-e44d6796853d}</value>
+=======
 <!-- Written by QtCreator 4.5.0, 2018-02-05T08:57:31. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{0acede81-442c-44a5-b9ab-86faec4d228e}</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -68,7 +76,11 @@
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Debug</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Documents/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Debug</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -122,7 +134,11 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Release</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Documents/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Release</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -176,7 +192,11 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Profile</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Mangesh/Documents/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Profile</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -288,13 +308,21 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">ra</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Mangesh/Git/rat/application/ra.pro</value>
+=======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Mangesh/Documents/Git/rat/application/ra.pro</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">ra.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
+<<<<<<< HEAD
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">C:/Users/Mangesh/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Release</value>
+=======
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">C:/Users/Mangesh/Documents/Git/rat/build-ra-Desktop_Qt_5_10_0_MinGW_32bit-Release</value>
+>>>>>>> a2398b17cee481d08c0e1035596957320253d3d8
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
