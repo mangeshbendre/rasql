@@ -1,0 +1,94 @@
+/********************************************************************************
+
+Friday Nights
+
+Schema:
+
+Drinkers(name, addr, hobby, frequent)
+Bars(name, addr, owner)
+Beers(name, brewer, alcohol)
+Sells(bar, beer, price, discount)
+Drinks(drinker, beer, rating)
+Favorites(drinker, bar, beer, season)
+
+********************************************************************************/
+
+DROP TABLE Drinkers
+DROP TABLE Bars
+DROP TABLE Beers
+DROP TABLE Sells
+DROP TABLE Drinks
+DROP TABLE Favorites
+
+CREATE TABLE Drinkers (
+       name text PRIMARY KEY,
+       addr text, 
+       hobby text,
+       frequent text
+       )
+
+CREATE TABLE Bars (
+       name text PRIMARY KEY,
+       addr text,
+       owner
+       )
+
+CREATE TABLE Beers (
+       name text PRIMARY KEY,
+       brewer text,
+       alcohol real
+       )
+
+CREATE TABLE Sells (
+       bar text,
+       beer text,
+       price real,
+       discount real,
+       PRIMARY KEY (bar, beer)
+       )
+
+CREATE TABLE Drinks (
+       drinker text,
+       beer text,
+       rating integer,
+       PRIMARY KEY (drinker, beer)
+       )
+
+CREATE TABLE Favorites (
+       drinker text,
+       bar text,
+       beer text,
+       season text,
+       PRIMARY KEY (drinker, bar)
+       )
+
+INSERT INTO Drinkers VALUES ('Alex', 'Green St', 'Reading', 'Sober Bar')
+INSERT INTO Drinkers VALUES ('Betty', 'King St', 'Singing', 'Green Bar')
+INSERT INTO Drinkers VALUES ('Cindy', 'Green St', 'Hiking', 'Green Bar')
+
+INSERT INTO Bars VALUES ('Sober Bar', 'Purple St', 'Jim')
+INSERT INTO Bars VALUES ('Green Bar', 'Green St','Sally')
+INSERT INTO Bars VALUES ('Purple Bar', 'Purple St','Paul')
+
+INSERT INTO Beers VALUES ('Sam Adams', 'Boston Beer', 0.049)
+INSERT INTO Beers VALUES ('Bud', 'AB InBev', 0.05)
+INSERT INTO Beers VALUES ('Bud Lite', 'AB InBev', 0.042)
+INSERT INTO Beers VALUES ('Coors', 'Coors', 0.05)
+
+INSERT INTO Sells VALUES ('Sober Bar', 'Bud', 5.0, 0.05)
+INSERT INTO Sells VALUES ('Sober Bar', 'Bud Lite', 3.0, 0)
+INSERT INTO Sells VALUES ('Sober Bar', 'Sam Adams', 6.0, 0.1)
+INSERT INTO Sells VALUES ('Green Bar', 'Bud', 2.0, 0)
+INSERT INTO Sells VALUES ('Green Bar', 'Sam Adams', 4.5, 0.2)
+INSERT INTO Sells VALUES ('Green Bar', 'Coors', null, null)
+INSERT INTO Sells VALUES ('Purple Bar', 'Bud', 4.5, 0.2)
+INSERT INTO Sells VALUES ('Purple Bar', 'Sam Adams', 5.0, 0.3)
+
+INSERT INTO Drinks VALUES ('Alex', 'Bud', 3)
+INSERT INTO Drinks VALUES ('Alex', 'Sam Adams', 5)
+INSERT INTO Drinks VALUES ('Betty', 'Sam Adams', 2)
+INSERT INTO Drinks VALUES ('Cindy', 'Bud Lite', 3)
+
+INSERT INTO Favorites VALUES ('Alex', 'Sober Bar', 'Bud', 'Spring')
+INSERT INTO Favorites VALUES ('Alex', 'Green Bar', 'Sam Adams', 'Summer')
+INSERT INTO Favorites VALUES ('Cindy', 'Green Bar', 'Sam Adams', 'Summer')

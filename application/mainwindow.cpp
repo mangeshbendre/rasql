@@ -100,8 +100,8 @@ void MainWindow::documentWasModified()
 void MainWindow::about()
 
 {
-    QMessageBox::about(this, tr("About RAT"),
-                       tr("RAT (Relational Algebra Translator) V0.1.\nDeveloped by: Mangesh and Nilam."));
+    QMessageBox::about(this, tr("About RASQL"),
+                       tr("RASQL (Relational Algebra and SQL) V0.1.\nDeveloped by: Mangesh and Nilam."));
 }
 
 
@@ -168,7 +168,7 @@ void MainWindow::loadFile(const QString &fileName)
 void MainWindow::open()
 {
     if (maybeSave()) {
-        QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Rat files (*.rat)"));
+        QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("RASQL files (*.rasql)"));
         if (!fileName.isEmpty())
             loadFile(fileName);
     }
@@ -207,7 +207,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
 
     QString shownName = curFile;
     if (curFile.isEmpty())
-        shownName = "untitled.rat";
+        shownName = "untitled.rasql";
     setWindowFilePath(shownName);
 
 }
@@ -260,7 +260,7 @@ bool MainWindow::save()
 
 bool MainWindow::saveAs()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "untitled.rat", tr("Rat files (*.rat);;Plain Text files(*.txt)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "untitled.rat", tr("Rat files (*.rasql);;Plain Text files(*.txt)"));
     if (fileName.isEmpty())
         return false;
 
