@@ -9,7 +9,7 @@
 #include "highlighter.h"
 #include "richraparser.h"
 
-#define APP_NAME "RAT"
+#define APP_NAME "RASQL"
 #define COMPANY_NAME "2 Idiots"
 #define FONT_FAMILY "Apple Symbols"
 #define FONT_SIZE 20
