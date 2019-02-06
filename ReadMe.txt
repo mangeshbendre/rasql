@@ -62,7 +62,7 @@
 	4. Run rqsql.exe from the extrated files.
  
  B. For Mac OS
- 	1. Download the disk image from https://github.com/forward-uiuc/rasql/releases/download/0.1/rat.dmg
+ 	1. Download the disk image from https://github.com/forward-uiuc/rasql/releases/download/0.1/rasql.dmg
 	2. Mount the image by double cliking on it.
 	3. Drag the Rat application from the image to the Applications folder. 
 	4. Run the Rat application.
